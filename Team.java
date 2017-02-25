@@ -21,9 +21,6 @@ public class Team
 		members.add(a);
 		members.add(b);
 		
-		
-		
-		
 	}
 	
 	
@@ -88,15 +85,26 @@ public class Team
 	}
 	
 	
-	public void removeMember(Individual m)
+
+	public HashSet<String> getLangsKnown()
 	{
-		
+		return langsKnown;
 	}
 	
+	public HashSet<String> getLangsKnownUnknown()
+	{
+		return langsUnknown;
+	}
 	
-	
-	
+	public String getTeamName()
+	{
+		return teamName;
+	}
 		
+	public int getNumMembers()
+	{
+		return numMembers;
+	}
 
 	
 	
