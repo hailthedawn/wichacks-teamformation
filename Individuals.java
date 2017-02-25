@@ -5,12 +5,28 @@
 import java.util.HashSet;
 
 public class Individuals {
-    private HashSet _individuals;
+    private HashSet individuals;
     
     public Individuals()
     {
         individuals = new HashSet<Individual>();
     }
     
-    public void addIndividual()
+    //mutator method- adds individual
+    public void addIndividual(Individual individual)
+    {
+        individuals.add(individual);
+    }
+    
+    //mutator method- removes individual
+    public void removeIndividual(Individual individual)
+    {
+        individuals.remove(individual);
+    }
+    
+    //returns total number of individuals
+    public int numIndividuals()
+    {
+        return individuals.size();
+    }
 }
