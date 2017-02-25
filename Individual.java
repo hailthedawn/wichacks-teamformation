@@ -15,17 +15,17 @@ public class Individual {
     private int age;
     //age of individual
 
-    public boolean status;
+    private boolean status;
     //are they part of a team? Yes: True, Maybe/No: False
     //if False, they're searchable. else, they're not.
 
-    public boolean hasIdea;
+    private boolean hasIdea;
     //do they have their own idea? Are they willing to change?
 
-    public boolean isIdeaFinal;
+    private boolean isIdeaFinal;
     //open to other ideas? default:false if they have no idea at all
 
-    public ArrayList<String> lookingForThese;
+    private ArrayList<String> lookingForThese;
     //strings of what they're looking for. eg->fields like web dev, data science etc.
     //when searching, look for keywords
 
