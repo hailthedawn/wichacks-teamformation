@@ -29,6 +29,17 @@ public class Individual {
     //strings of what they're looking for. eg->fields like web dev, data science etc.
     //when searching, look for keywords
 
+    private boolean ifCompeting;
+    //true if individual wants to compete, false if they want to learn
+
+
+    public boolean getIfCompeting() {
+        return ifCompeting;
+    }
+
+    public void setIfCompeting(boolean ifCompeting) {
+        this.ifCompeting = ifCompeting;
+    }
 
     /**
      * const to initialize fields
