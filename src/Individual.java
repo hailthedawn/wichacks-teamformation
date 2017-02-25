@@ -9,7 +9,7 @@ public class Individual {
     private String name;
     //name of individual
 
-    private ArrayList<String> langs;
+    private HashSets<String> langs;
     //list of languages known
 
     private int age;
@@ -25,7 +25,7 @@ public class Individual {
     private boolean isIdeaFinal;
     //open to other ideas? default:false if they have no idea at all
 
-    private ArrayList<String> lookingForThese;
+    private HashSets<String> lookingForThese;
     //strings of what they're looking for. eg->fields like web dev, data science etc.
     //when searching, look for keywords
 
@@ -33,7 +33,7 @@ public class Individual {
     /**
      * const to initialize fields
      */
-    public Individual(String name, ArrayList<String> langs, int age, boolean status, boolean hasIdea, boolean isIdeaFinal, ArrayList<String> lookingForThese) {
+    public Individual(String name, HashSets<String> langs, int age, boolean status, boolean hasIdea, boolean isIdeaFinal, HashSets<String> lookingForThese) {
         this.name = name;
         this.langs = langs;
         this.age = age;
@@ -51,7 +51,7 @@ public class Individual {
         this.name = name;
     }
 
-    public void setLangs(ArrayList<String> langs) {
+    public void setLangs(HashSets<String> langs) {
         this.langs = langs;
     }
 
@@ -71,7 +71,7 @@ public class Individual {
         isIdeaFinal = ideaFinal;
     }
 
-    public void setLookingForThese(ArrayList<String> lookingForThese) {
+    public void setLookingForThese(HashSets<String> lookingForThese) {
         this.lookingForThese = lookingForThese;
     }
 
@@ -79,7 +79,7 @@ public class Individual {
         return name;
     }
 
-    public ArrayList<String> getLangs() {
+    public HashSets<String> getLangs() {
         return langs;
     }
 
@@ -99,7 +99,9 @@ public class Individual {
         return isIdeaFinal;
     }
 
-    public ArrayList<String> getLookingForThese() {
+    public HashSets<String> getLookingForThese() {
         return lookingForThese;
     }
+
+    
 }
