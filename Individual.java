@@ -15,9 +15,20 @@ public class Individual {
     private int age;
     //age of individual
 
+    public String getIdea() {
+        return idea;
+    }
+
+    public void setIdea(String idea) {
+        this.idea = idea;
+    }
+
     private boolean status;
     //are they part of a team? Yes: True, Maybe/No: False.
     //if False, they're searchable. else, they're not.
+
+    private String idea;
+    //the idea they have
 
     private boolean hasIdea;
     //do they have their own idea? Are they willing to change?
