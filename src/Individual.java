@@ -29,6 +29,9 @@ public class Individual {
     //strings of what they're looking for. eg->fields like web dev, data science etc.
     //when searching, look for keywords
 
+    private boolean goal;
+    //true if individual wants to compete, false if they want to learn
+
 
     /**
      * const to initialize fields
