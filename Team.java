@@ -8,9 +8,10 @@ import java.util.Set;
 public class Team 
 {	
 	private HashSet<Individual> members;
-	private HashSet<String> langsKnown, langsUnknown;
+	private HashSet<String> langsKnown, langsUnknown, ideaList;
 	private int numMembers;
-	private String teamName;
+	private String teamName, teamIdeaString;
+	private boolean teamCompeting, teamIdea;
 	
 	
 	
@@ -84,8 +85,53 @@ public class Team
 		}
 	}
 	
-	
+	public void isTeamCompeting()
+	{
+		int ctr=0;
+		
+		for (Individual member : members)
+		{
+			if (member.getIfCompeting()==true)
+			{
+				ctr++;
+			}
+			
+		}
+		if ((member.size())/2<=ctr)
+		{
+			teamCompeting=false;
+		}
+		else
+		{
+			teamCompeting=true;
+		}
+	}
 
+	
+	public void isThereTeamIdea()
+	{
+		for (Individual member : members)
+		{
+			if (member.getIsIdeaFinal())
+			{
+				//determine what to do if more than one member has a final idea
+				teamIdea=true;
+				teamIdeaString=member.setIdea(member.getIdea()));
+			}
+			
+				
+		}
+	}
+	
+	public void makeIdeaSet()
+	{
+		ideaList=new HashSet<String>();
+		for (Individual member : members)
+		{
+			ideaList.add(member.getIdea());
+		}
+	}
+	
 	public HashSet<String> getLangsKnown()
 	{
 		return langsKnown;
