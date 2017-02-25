@@ -16,7 +16,7 @@ public class Individual {
     //age of individual
 
     private boolean status;
-    //are they part of a team? Yes: True, Maybe/No: False
+    //are they part of a team? Yes: True, Maybe/No: False.
     //if False, they're searchable. else, they're not.
 
     private boolean hasIdea;
