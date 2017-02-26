@@ -31,11 +31,16 @@ public class Individuals {
     }
     
     //creates a score for each individual based on matching skills
-    public ArrayList<Team> searchIndividuals(ArrayList<String> checkLanguages, boolean ifCompeting, boolean hasIdea, boolean isIdeaFinal)
+    public ArrayList<Individual> searchIndividuals(ArrayList<String> checkLanguages, boolean ifCompeting, boolean hasIdea, boolean isIdeaFinal)
     {
-        //creates hashmap
-        HashMap<Integer, String> map = new HashMap<Integer, String>();
+        //creates arraylist of people to be sorted
+        int size = checkLanguages.size() + 3;
+        ArrayList <ArrayList <Individual>> sorted = new ArrayList <ArrayList <Individual>>(size);
         
+        for (int i=0; i < size; i++)
+        {
+            sorted.add(new ArrayList <Individual>);
+        }
         for(Individual person: individuals)
         {
             int score = 0;
@@ -61,8 +66,30 @@ public class Individuals {
                 }
             }
             
-            //attaches score to the person
-            map.put(person, score);
+            //adds people in to the arraylist with their scores
+            sorted.get(score).add(person);
         }
+        
+        //sorts the arraylist
+        int index = size;
+        ArrayList <Individual> topTen = new ArrayList <Individual>();
+        while(topTen.size() < 10)
+        { 
+            ArrayList<Individual> highScores = sorted.get(index);
+            if(highScores.size() > 10) {
+                for(int i = 0; i < 10; i++){
+                    topTen.add(highScores.get(i));
+                }
+            } else {
+                for(int i = 0; i < highScores.size(); i++){
+                    topTen.add(highScores.get(i));
+                }
+            }
+            index--;
+            
+            if (index < 0)
+            { break; }
+        }
+        return topTen;
     }
 }
