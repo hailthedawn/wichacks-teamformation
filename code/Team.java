@@ -97,7 +97,7 @@ public class Team
 			}
 			
 		}
-		if ((member.size())/2<=ctr)
+		if ((members.size())/2<=ctr)
 		{
 			teamCompeting=false;
 		}
@@ -112,11 +112,12 @@ public class Team
 	{
 		for (Individual member : members)
 		{
-			if (member.getIsIdeaFinal())
+			if (member.isIdeaFinal())
 			{
 				//determine what to do if more than one member has a final idea
 				teamIdea=true;
-				teamIdeaString=member.setIdea(member.getIdea()));
+				teamIdeaString = member.getIdea();
+				
 			}
 			
 				
@@ -152,6 +153,15 @@ public class Team
 		return numMembers;
 	}
 
+	public boolean getTeamCompeting(){
+		return teamCompeting;
+	}
 	
+	public boolean getHasIdea(){
+		return teamIdea;
+	}
 	
+	public String getTeamIdea(){
+		return teamIdeaString;
+	}
 }

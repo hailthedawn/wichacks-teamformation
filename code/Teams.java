@@ -1,11 +1,12 @@
 package code;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 
 public class Teams {
 
-	private HashSet _teams;
+	private HashSet<Team> _teams;
 	
 	public Teams() {
 		_teams = new HashSet<Team>();
@@ -20,7 +21,7 @@ public class Teams {
 	}
 	
 	public int numTeams() {
-		_teams.size();
+		return _teams.size();
 	}
 	
     public ArrayList<Team> searchTeams(ArrayList<String> checkLanguages, boolean ifCompeting, boolean hasIdea, boolean isIdeaFinal)
@@ -31,35 +32,35 @@ public class Teams {
         
         for (int i=0; i < size; i++)
         {
-            sorted.add(new ArrayList <Team>);
+            sorted.add(new ArrayList<Team>());
         }
-        for(Team person: Teams)
+        for(Team team: _teams)
         {
             int score = 0;
             //checks if any languages are equal
-            for(String lang: person.getLangs())
+            for(String lang: team.getLangsKnown())
             {
                 if(checkLanguages.contains(lang))
                 { score++; }
             }
             //checks if they have equal competition intentions
-            if((Team.getIfCompeting() && ifCompeting) || (!Team.getIfCompeting() && !ifCompeting))
+            if((team.getTeamCompeting() && ifCompeting) || (!team.getTeamCompeting() && !ifCompeting))
             { score++; }
             //checks if their hasIdea is equal
-            if((Team.isHasIdea() && hasIdea) || (!Team.isHasIdea() && !hasIdea))
+            if((team.getHasIdea() && hasIdea) || (!team.getHasIdea() && !hasIdea))
             {
                 score++;
                 
                 //checks whether isIdeaFinal is equal
                 if (hasIdea)
                 {
-                    if ((Team.isIdeaFinal() && isIdeaFinal) || (!Team.isIdeaFinal() && !isIdeaFinal))
+                    if ((team.getTeamIdea() != null && isIdeaFinal) || (team.getTeamIdea() == null && !isIdeaFinal))
                     { score++; }
                 }
             }
             
             //adds people in to the arraylist with their scores
-            sorted.get(score).add(person);
+            sorted.get(score).add(team);
         }
         
         //sorts the arraylist

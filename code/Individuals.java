@@ -3,7 +3,7 @@ package code;
 import java.util.*;
 
 public class Individuals {
-    private HashSet individuals;
+    private HashSet<Individual> individuals;
     
     public Individuals()
     {
@@ -37,7 +37,7 @@ public class Individuals {
         
         for (int i=0; i < size; i++)
         {
-            sorted.add(new ArrayList <Individual>);
+            sorted.add(new ArrayList <Individual>());
         }
         for(Individual person: individuals)
         {
@@ -49,17 +49,17 @@ public class Individuals {
                 { score++; }
             }
             //checks if they have equal competition intentions
-            if((Individual.getIfCompeting() && ifCompeting) || (!Individual.getIfCompeting() && !ifCompeting))
+            if((person.getIfCompeting() && ifCompeting) || (!person.getIfCompeting() && !ifCompeting))
             { score++; }
             //checks if their hasIdea is equal
-            if((Individual.isHasIdea() && hasIdea) || (!Individual.isHasIdea() && !hasIdea))
+            if((person.isHasIdea() && hasIdea) || (!person.isHasIdea() && !hasIdea))
             {
                 score++;
                 
                 //checks whether isIdeaFinal is equal
                 if (hasIdea)
                 {
-                    if ((Individual.isIdeaFinal() && isIdeaFinal) || (!Individual.isIdeaFinal() && !isIdeaFinal))
+                    if ((person.isIdeaFinal() && isIdeaFinal) || (!person.isIdeaFinal() && !isIdeaFinal))
                     { score++; }
                 }
             }
